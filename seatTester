@@ -1,0 +1,63 @@
+import java.util.Scanner;
+public class seatTester {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		
+		seats airplane = new seats(); 		// creates object
+		Scanner scan = new Scanner(System.in);
+		
+
+		 char[][] seatChart = new char[6][4]; //variables 
+		 int aisleNum = 0;
+		 char seatLetter = 'z';
+		 String userInput = "";
+		 
+		 	
+			 for(int i = 0; i < seatChart.length; i++) {	//creating seat chart using 2D array 
+				 for(int j =0; j<seatChart[0].length;j++) {
+					 switch(j) {
+					 
+					 case 0:
+						 seatChart[i][j]='A';
+						 break;
+					 case 1:
+						 seatChart[i][j]='B';
+						 break;
+					 case 2:
+						 seatChart[i][j]='C';
+						 break;
+					 case 3:
+						 seatChart[i][j]='D';
+						 break;
+					 }	 
+				 }
+		 }
+			 
+			 
+		airplane.printSeats(seatChart); //prints out the seat chart
+			 
+			 
+		System.out.println("You will input the seat selection using the Aisle Number and then the seat letter(ex - 1B)");
+		
+			int exit = 1; //escape variable for do-while loop
+		do{
+		System.out.println("Please enter the Aisle Number and then the seat letter or Q to quit");
+		userInput = scan.nextLine();		//takes in user input
+		if(userInput.charAt(0) == 'q' || userInput.charAt(0) == 'Q') {	//checks to see of user wants to quit
+		exit = 0;
+			
+		}else {				
+		aisleNum = (Character.getNumericValue(userInput.charAt(0)-1));	// turns first index of string into an integer
+		seatLetter = userInput.charAt(1);		//turns second index of string into char
+		
+		airplane.takeSeat(seatChart, aisleNum, seatLetter);	//method to replace letter in seat chart with an X
+		airplane.printSeats(seatChart);	
+		}
+		
+		}while(exit >= 1);
+		
+
+	}
+
+}
