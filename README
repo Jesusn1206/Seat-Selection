@@ -1,0 +1,27 @@
+/*
+This was an assignment I had in my programming 2 course
+
+The assignment is as follows:
+Using arrays, please write a Java program that simulates assigning seats in a train based on the following seating pattern:
+
+1 A B C D
+2 A B C D
+3 A B C D
+4 A B C D
+5 A B C D
+The program should display the initial seat pattern, with an 'X' marking the seats already assigned. For example, after seats 1A, 2B, and 4C are taken, the display should look like this:
+
+1 X B C D
+2 A X C D
+3 A B C D
+4 A B X D
+5 A B C D
+After displaying the seats available, the program should prompt the user to enter the desired seat in the format "row column" (e.g., "1A" or "3C"). If the seat is available, the program should assign it and update the display. If the seat is already assigned, the program should display a message indicating that the seat is occupied and ask for another choice.
+
+The program should continue prompting for seat assignments until all seats are filled or until the user signals that the program should end.
+
+Write the Java program for the above scenario and test it with different seat assignments to ensure it works as expected.
+
+
+
+*/
